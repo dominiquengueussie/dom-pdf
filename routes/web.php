@@ -26,8 +26,9 @@ Route::get('user/pdf', [userController::class, 'createPDF'])->name('export.pdf')
 
 
 // EXPORT PDF AVEC LARAVEL 8
-Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+Route::get('generate-pdf', [PDFController::class, 'generatePDF'])->name('generate-pdf');
 Route::get('show-info', function () {
     return view('info');
 });
-//Route::get('send', [PDFController::class, 'sendInfo']);
+Route::get('send', [PDFController::class, 'sendInfo'])->name('send.info');
+Route::get('voirPDF', [PDFController::class, 'voirPDF']);
